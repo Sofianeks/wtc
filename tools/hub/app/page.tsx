@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Star, CalendarDays, UserPlus, Camera, MessageCircle } from "lucide-react";
 
 const LINKS = {
-  avis: "https://maps.app.goo.gl/b8s9UpExgkmZt6jv7",
+  avis: "https://g.page/r/CRbGZYS76gDbEAE/review",
   reservation: "https://app.wtc91.fr/client/login",
   inscription: "https://app.wtc91.fr/client/signup",
   instagram: "https://www.instagram.com/wtc91?igsh=Nmh5c3J4NHphNWJ2",
