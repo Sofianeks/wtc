@@ -1,0 +1,257 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f5f0eb;
+  --primary: #f5a623;
+  --primary-dark: #d4891a;
+  --text: #1a1a1a;
+  --text-muted: #888;
+  --white: #ffffff;
+  --radius: 18px;
+  --shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px 60px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(245, 166, 35, 0.35);
+}
+
+.logo-circle img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.club-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  color: var(--text);
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.card:active {
+  transform: translateY(0);
+}
+
+/* Featured card — avis Google */
+.card--featured {
+  background: var(--primary);
+  color: var(--white);
+  padding: 28px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.card--featured .card__label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.card--featured .card__title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.card--featured .card__sub {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.card--featured .card__icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  opacity: 0.25;
+  width: 64px;
+  height: 64px;
+}
+
+.card--featured .card__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: white;
+}
+
+.card--featured .card__arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Thumbnail pour les cards avec image */
+.card__thumb {
+  width: 68px;
+  height: 68px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: #e0ece5;
+}
+
+.card__thumb--reservation {
+  background: linear-gradient(135deg, #d4e8da, #a8d4b5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%232c6e3f' stroke-width='2'/%3E%3Cline x1='30' y1='18' x2='30' y2='42' stroke='%232c6e3f' stroke-width='1.5'/%3E%3Cline x1='18' y1='30' x2='42' y2='30' stroke='%232c6e3f' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__thumb--inscription {
+  background: linear-gradient(135deg, #e8d4e0, #d4a8c0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='22' r='8' fill='none' stroke='%232c6e3f' stroke-width='2'/%3E%3Cpath d='M16 46c0-7.7 6.3-14 14-14s14 6.3 14 14' fill='none' stroke='%232c6e3f' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__content {
+  flex: 1;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.card__sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Small cards grid */
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card--small {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px;
+  gap: 10px;
+}
+
+.card__icon-round {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__icon-round svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary-dark);
+}
+
+.card--small .card__title {
+  font-size: 14px;
+}
+
+.card--small .card__sub {
+  font-size: 12px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-top: 8px;
+}

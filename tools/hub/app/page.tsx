@@ -134,8 +134,9 @@ export default function HubPage() {
           </div>
         </Link>
 
-        <footer className="text-center text-xs text-gray-400 pt-2">
-          © 2026 Wissous Tennis Club
+        <footer className="text-center text-xs text-gray-400 pt-2 flex flex-col gap-1">
+          <p>© 2026 Wissous Tennis Club</p>
+          <p>Développé par <a href="https://ouicansolutions.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600 transition-colors">OuiCan Solutions</a></p>
         </footer>
       </div>
     </main>
